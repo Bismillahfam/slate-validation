@@ -99,6 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
             },
           },
           y: {
+            title: {
+              display: true,
+              text: "Reaction Time (ms)",
+            },
             ticks: {
               color: "#ffffff",
             },
