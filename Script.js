@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
       280, 265, 250, 240, 225, 215, 205, 198, 190, 182, 175, 170, 165, 160,
     ];
 
-    const labels = reactionData.map((_, i) => `Day ${i + 1}`);
+    const labels = reactionData.map((_, i) => `${i + 1}`);
 
     new Chart(chartCanvas, {
       type: "line",
@@ -87,6 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
         maintainAspectRatio: false,
         scales: {
           x: {
+            title: {
+              display: true,
+              text: "Time (Days)",
+            },
             ticks: {
               color: "#ffffff",
             },
