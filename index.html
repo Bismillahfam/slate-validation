@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slate — Measured Focus</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="glass-card">
+        <div class="layout">
+          <!-- LEFT SIDE -->
+          <div class="left">
+            <h1>Slate</h1>
+            <p class="subhead">Mental performance. Quantified.</p>
+
+            <form id="signup-form">
+              <input
+                id="email"
+                type="email"
+                placeholder="Email address"
+                required
+              />
+
+              <select id="industry" required>
+                <option value="">Industry</option>
+                <option>Finance</option>
+                <option>Technology</option>
+                <option>Consulting</option>
+                <option>Law</option>
+                <option>Other</option>
+              </select>
+
+              <button type="submit">Request early access</button>
+            </form>
+
+            <div id="message"></div>
+          </div>
+
+          <!-- RIGHT SIDE -->
+          <div class="right">
+            <div class="graph-container">
+              <div class="graph-title">Reaction Time Index</div>
+
+              <svg viewBox="0 0 300 160" class="graph">
+                <polyline
+                  fill="none"
+                  stroke="#d9d9d9"
+                  stroke-width="2"
+                  points="
+                  0,120
+                  40,110
+                  80,95
+                  120,80
+                  160,70
+                  200,60
+                  240,52
+                  280,48"
+                />
+              </svg>
+
+              <div class="graph-caption">14 day improvement trend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="Script.js"></script>
+  </body>
+</html>
