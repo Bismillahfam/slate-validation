@@ -1,0 +1,181 @@
+/* =============================
+   RESET
+============================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================
+   SLATE TEXTURE BACKGROUND
+============================= */
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #e6e6e6;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(circle at 20% 30%, #1a1c1f 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, #141518 0%, transparent 50%), #0c0d0f;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============================
+   WRAPPER
+============================= */
+
+.wrapper {
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px;
+}
+
+/* =============================
+   GLASS CARD
+============================= */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* =============================
+   SPLIT LAYOUT
+============================= */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* =============================
+   LEFT SIDE
+============================= */
+
+.left h1 {
+  font-size: 46px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 0 0 10px;
+}
+
+.subhead {
+  color: #a6a6a6;
+  margin-bottom: 40px;
+  font-size: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+input,
+select {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e6e6e6;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+button {
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #f2f2f2, #cfcfcf);
+  color: #0c0d0f;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+#message {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #a6a6a6;
+}
+
+/* =============================
+   RIGHT SIDE (GRAPH)
+============================= */
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graph-container {
+  width: 100%;
+  max-width: 360px;
+}
+
+.graph-title {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+  margin-bottom: 16px;
+}
+
+.graph {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+.graph-caption {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #8a8a8a;
+}
+
+/* =============================
+   MOBILE
+============================= */
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .glass-card {
+    padding: 35px;
+  }
+
+  .left h1 {
+    font-size: 36px;
+  }
+}
