@@ -2,7 +2,8 @@
 // SUPABASE CONFIG
 // ===============================
 const SUPABASE_URL = "https://eylopwzdfmtfkvtxdpdt.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR_ANON_KEY_HERE";
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5bG9wd3pkZm10Zmt2dHhkcGR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA3MzUwNTcsImV4cCI6MjA4NjMxMTA1N30.FAH1XtaQdXAmP_m3-kU8-TIe3rqSmWMZwVOYHb3PLcM";
 
 // ===============================
 // DOM READY
