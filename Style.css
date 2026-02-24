@@ -13,6 +13,13 @@ body {
   padding: 0;
 }
 
+.cormorant {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* =============================
    SLATE TEXTURE BACKGROUND
 ============================= */
