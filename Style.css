@@ -42,7 +42,7 @@ body {
 }
 
 /* =============================
-   GLASS CARD
+  GLASS CARD
 ============================= */
 
 .glass-card {
@@ -55,20 +55,6 @@ body {
     0 40px 80px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
-
-/* =============================
-   SPLIT LAYOUT
-============================= */
-
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-}
-
-/* =============================
-   LEFT SIDE
-============================= */
 
 .left h1 {
   font-size: 46px;
@@ -136,18 +122,59 @@ button:hover {
   justify-content: center;
 }
 
-.graph-container {
-  position: relative;
-  width: 100%;
-  height: 400px;
-}
-
 .graph-title {
   font-size: 12px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #9a9a9a;
   margin-bottom: 16px;
+}
+
+.graph-arrow-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.graph-container {
+  position: relative;
+  width: min(760px, 100%);
+  height: 400px;
+}
+
+/* Arrow buttons for chart navigation (flex layout) */
+.chart-arrow {
+  position: relative;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
+  z-index: 20;
+}
+
+.chart-arrow:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.chart-arrow.left {
+  margin-right: 8px;
+}
+.chart-arrow.right {
+  margin-left: 8px;
 }
 
 .graph {

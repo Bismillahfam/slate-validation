@@ -52,11 +52,31 @@
 
           <!-- RIGHT SIDE -->
           <div class="right">
-            <div class="graph-container">
-              <div class="graph-title">14 Day Reaction Time Index</div>
+            <div class="graph-arrow-container">
+              <!-- Left Navigation arrows -->
+              <button
+                id="prev"
+                class="chart-arrow left"
+                aria-label="Previous dataset"
+              >
+                ‹
+              </button>
 
-              <!-- Chart.js Canvas -->
-              <canvas id="reactionChart"></canvas>
+              <div class="graph-container">
+                <div class="graph-title">14 Day Reaction Time Index</div>
+
+                <!-- Chart.js Canvas -->
+                <canvas id="reactionChart"></canvas>
+              </div>
+
+              <!-- Right Navigation arrows -->
+              <button
+                id="next"
+                class="chart-arrow right"
+                aria-label="Next dataset"
+              >
+                ›
+              </button>
             </div>
           </div>
         </div>

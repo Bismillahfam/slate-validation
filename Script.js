@@ -57,22 +57,45 @@ document.addEventListener("DOMContentLoaded", () => {
   // CHART.JS GRAPH
   // ===============================
   const chartCanvas = document.getElementById("reactionChart");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+  const graphTitleEl = document.querySelector(".graph-title");
 
   if (chartCanvas && typeof Chart !== "undefined") {
-    const reactionData = [
-      280, 265, 250, 240, 225, 215, 205, 198, 190, 182, 175, 170, 165, 160,
+    const graphs = [
+      {
+        title: "14 Day Reaction Time Index",
+        label: "Reaction Time (ms)",
+        data: [
+          280, 265, 250, 240, 225, 215, 205, 198, 190, 182, 175, 170, 165, 160,
+        ],
+      },
+      {
+        title: "14 Day Accuracy Index",
+        label: "Accuracy (%)",
+        data: [
+          88, 89, 90, 91, 91.5, 92, 92.2, 92.5, 93, 93.2, 93.5, 94, 94.2, 94.5,
+        ],
+      },
+      {
+        title: "7 Day Fatigue Index",
+        label: "Fatigue (score)",
+        data: [6, 5.8, 5.5, 5.2, 5.0, 4.8, 4.6],
+      },
     ];
 
-    const labels = reactionData.map((_, i) => `${i + 1}`);
+    let currentIndex = 0;
 
-    new Chart(chartCanvas, {
+    const makeLabels = (arr) => arr.map((_, i) => `${i + 1}`);
+
+    const config = {
       type: "line",
       data: {
-        labels: labels,
+        labels: makeLabels(graphs[currentIndex].data),
         datasets: [
           {
-            label: "Reaction Time (ms)",
-            data: reactionData,
+            label: graphs[currentIndex].label,
+            data: graphs[currentIndex].data,
             borderColor: "#c0c0c0",
             backgroundColor: "rgba(192,192,192,0.1)",
             borderWidth: 2,
@@ -101,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
           y: {
             title: {
               display: true,
-              text: "Reaction Time (ms)",
+              text: graphs[currentIndex].label,
             },
             ticks: {
               color: "#ffffff",
@@ -119,6 +142,39 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         },
       },
-    });
+    };
+
+    const reactionChart = new Chart(chartCanvas, config);
+
+    function updateChart(index) {
+      const g = graphs[index];
+      reactionChart.data.labels = makeLabels(g.data);
+      reactionChart.data.datasets[0].data = g.data;
+      reactionChart.data.datasets[0].label = g.label;
+      if (
+        reactionChart.options &&
+        reactionChart.options.scales &&
+        reactionChart.options.scales.y &&
+        reactionChart.options.scales.y.title
+      ) {
+        reactionChart.options.scales.y.title.text = g.label;
+      }
+      reactionChart.update();
+      if (graphTitleEl) graphTitleEl.textContent = g.title;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + graphs.length) % graphs.length;
+        updateChart(currentIndex);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % graphs.length;
+        updateChart(currentIndex);
+      });
+    }
   }
 });
